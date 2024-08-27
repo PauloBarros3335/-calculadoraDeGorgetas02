@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:400,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <title>Calculadora de Gorjetas</title>
+  </head>
+  <body>
+    <div class="container">
+      <select id="idioma" onchange="alterarIdioma()">
+        <option value="pt">Português</option>
+        <option value="en">English</option>
+        <option value="es">Español</option>
+      </select>
+
+      <div>
+        <h1 class="titulo">Calculadora de Gorjetas</h1>
+      </div>
+
+      <form class="formularioGorjetas" id="formularioGorjetas">
+        <label for="conta">
+          <p>Quanto ficou a conta</p>
+        </label>
+        <p>
+          R$
+          <input
+            type="number"
+            placeholder="Ex: 100"
+            name="conta"
+            id="conta"
+            class="inputFormulario"
+            required
+          />
+        </p>
+        <label for="qualidadeServico">
+          <p>Como foi o serviço?</p>
+        </label>
+        <p>
+          <select
+            name="qualidadeServico"
+            id="qualidadeServico"
+            class="selecaoFormulario"
+            required
+          >
+            <option disabled selected value="0">Escolha uma opção</option>
+            <option value="30">30% - Incrível</option>
+            <option value="20">20% - Bom</option>
+            <option value="10">10% - Aceitável</option>
+            <option value="2">2% - Ruim</option>
+            <option value="1">1% - Péssimo</option>
+          </select>
+        </p>
+        <label for="pessoas">
+          <p>Quantas pessoas vão dividir a conta?</p>
+        </label>
+        <p>
+          <input
+            type="number"
+            placeholder="Ex: 2"
+            name="pessoas"
+            id="pessoas"
+            class="inputFormulario"
+            required
+          />
+          pessoa(s)
+        </p>
+        <div class="grupoBotoes">
+          <button type="submit" class="botao" id="calcular">Calcular!</button>
+          <button type="button" id="limpar">Limpar</button>
+          <button type="button" id="alternarTema">Alternar Tema</button>
+        </div>
+      </form>
+
+      <div id="totalGorjeta">
+        Valor a pagar: R$<span id="gorjeta">0,00</span>
+        <span id="cada">cada</span>
+        <button id="copiar">Copiar valor</button>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>
